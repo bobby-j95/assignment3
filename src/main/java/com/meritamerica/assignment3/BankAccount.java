@@ -12,8 +12,8 @@ public class BankAccount {
 
 	// All private variables needed in the program
 	private double balance;
-	private double interestRate;
-	private long accountNumber;
+	public double interestRate;
+	public long accountNumber;
 	Date openDate;
 
 	// first constructor without account number

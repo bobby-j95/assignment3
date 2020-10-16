@@ -119,6 +119,8 @@ public class AccountHolder implements Comparable<AccountHolder>  {
 		for (int i = 0; i < this.checkingAccount.length; i++) {
 			tempArray[i] = this.checkingAccount[i];
 		}
+		
+		// need to know more about this if and else if statements 
 		if (getCheckingBalance() + getSavingsBalance() + openingBalance < 250000.00) {
 			tempArray[numberOfCheckingAccount] = checking;
 			numberOfCheckingAccount++;
@@ -141,6 +143,7 @@ public class AccountHolder implements Comparable<AccountHolder>  {
 		for (int i = 0; i < this.checkingAccount.length; i++) {
 			tempArray[i] = this.checkingAccount[i];
 		}
+		// need to know more about this if and else if statements 
 		if (getCheckingBalance() + getSavingsBalance() + checkingAccount.getBalance() < 250000.00) {
 			tempArray[numberOfCheckingAccount] = checkingAccount;
 			numberOfCheckingAccount++;

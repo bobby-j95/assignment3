@@ -158,9 +158,9 @@ public class MeritBank {
 	}
 
 	static AccountHolder[] sortAccountHolders() {
-		Arrays.sort(accountHolderArray, Collections.reverseOrder());
+		Arrays.sort(accountHolderArray);
 		for (AccountHolder a : accountHolderArray) {
-			System.out.println(a);
+			System.out.println(a.getCDBalance());
 		}
 		return accountHolderArray;
 	}

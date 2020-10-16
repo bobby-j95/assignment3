@@ -8,6 +8,7 @@ public class CDAccount extends BankAccount{
 	private CDOffering offering = null;
 	private Date startDate;
 	private double balance;
+	private int term =0;
 	
 	//*created by behulum w
 	
@@ -19,6 +20,7 @@ public class CDAccount extends BankAccount{
 	
 	public CDAccount(long accountNumber, double openBalance, double interestRate, Date accountOpenedOn, int term) {
 		super(accountNumber, openBalance, interestRate, accountOpenedOn);
+		this.term = term;
 	}
 
 	public double getBalance() {
@@ -26,11 +28,11 @@ public class CDAccount extends BankAccount{
 	}
 	
 	public double getInterestRate() {
-		return offering.getInterestRate();
+		return super.interestRate;
 	}
 	
 	public int getTerm() {
-		return offering.getTerm();
+		return term;
 	}
 	
 	public Date getStartDate(){
@@ -40,7 +42,7 @@ public class CDAccount extends BankAccount{
 	// created by behulum w
 	
 	public long getAccountNumber() {
-		return getAccountNumber();
+		return super.accountNumber;
 	}
 	
 	public double futureValue() {

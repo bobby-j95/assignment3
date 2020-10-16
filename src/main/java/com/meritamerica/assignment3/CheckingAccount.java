@@ -15,7 +15,7 @@ public class CheckingAccount extends BankAccount {
 
 	}
 	public CheckingAccount (long accountNumber, double openBalance, double interestRate, Date accountOpenedOn) {
-		super(accountNumber, openBalance, INTEREST_RATE, accountOpenedOn);
+		super(accountNumber, openBalance, interestRate, accountOpenedOn);
 	}
 
 	public static CheckingAccount readFromString(String accountData)throws ParseException {

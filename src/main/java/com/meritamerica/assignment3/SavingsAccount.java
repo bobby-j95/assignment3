@@ -20,7 +20,7 @@ public class SavingsAccount extends BankAccount{
 	}
 	
 	public SavingsAccount (long accountNumber, double openBalance, double interestRate, Date accountOpenedOn) {
-		super(accountNumber, openBalance, INTEREST_RATE, accountOpenedOn);
+		super(accountNumber, openBalance, interestRate, accountOpenedOn);
 	}
 
 	public static SavingsAccount readFromString(String accountData)throws ParseException, NumberFormatException {
