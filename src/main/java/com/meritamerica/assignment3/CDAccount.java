@@ -45,6 +45,14 @@ public class CDAccount extends BankAccount{
 		return super.accountNumber;
 	}
 	
+	public boolean withdraw(double amount) {
+        return false;
+    }
+    
+    public boolean deposit(double amount) {
+    	return false;
+    }
+	
 	public double futureValue() {
 		return (super.getBalance() * Math.pow(1.0 + offering.getInterestRate(), offering.getTerm()));
 		
