@@ -10,7 +10,8 @@ import com.meritamerica.assignment3.SavingsAccount;
  *  and savings of the user as well for the unique bank account.
  * Created by Behulum W and Robert J
  */
-public class AccountHolder {
+public class AccountHolder implements Comparable<AccountHolder>  {
+	
 
 	// All private variables needed in the program
 	private String firstName;
@@ -312,4 +313,32 @@ public class AccountHolder {
 		return (getCheckingBalance() + getSavingsBalance() + getCDBalance());
 	}
 
+	public String writeToString() {
+    	StringBuilder accountHolderData = new StringBuilder();
+    	accountHolderData.append(firstName).append(",");
+    	accountHolderData.append(middleName).append(",");
+    	accountHolderData.append(lastName).append(",");
+    	accountHolderData.append(ssn);
+    	return accountHolderData.toString();
+    }
+
+	public static AccountHolder readFromString(String accountHolderData) {
+	    String[] holding = accountHolderData.split(",");
+	    String firstName = holding[0];
+	    String middleName = holding[1];
+	    String lastName = holding[2];
+	    String ssn = holding[3];	
+	    return new AccountHolder(firstName, middleName, lastName, ssn);
+	}
+	@Override
+	public int compareTo(AccountHolder account) {
+		if(this.getCombinedBalance() > account.getCombinedBalance()) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
+
+
+	
 }
