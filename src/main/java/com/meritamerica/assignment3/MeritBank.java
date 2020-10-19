@@ -101,7 +101,8 @@ public class MeritBank {
 	static double futureValue(double presentValue, double interestRate, int term) {
 		return (presentValue * (Math.pow((1 + interestRate), term)));
 	}
-
+// reads all the information from the txt file then sends the information off to where 
+	// it needs to go weather that be checking savings cd or account holder classes
 	public static boolean readFromFile(String fileName) {
 		CDOffering offering[] = new CDOffering[0];
 		try {
@@ -152,11 +153,11 @@ public class MeritBank {
 		}
 
 	}
-
+// sets the account number
 	private static void setNextAccountNumber(Long nextAccountNumber2) {
 		nextAccountNumber = nextAccountNumber2;
 	}
-
+// sorts all the account holders in the account holders array
 	static AccountHolder[] sortAccountHolders() {
 		Arrays.sort(accountHolderArray);
 		for (AccountHolder a : accountHolderArray) {
@@ -164,7 +165,7 @@ public class MeritBank {
 		}
 		return accountHolderArray;
 	}
-
+// gets the information from all the other classes and writes that into a new txt file 
 	static boolean writeToFile(String fileName) {
 		try {
 			FileWriter writer = new FileWriter(fileName);

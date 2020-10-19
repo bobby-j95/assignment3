@@ -22,7 +22,7 @@ public class SavingsAccount extends BankAccount{
 	public SavingsAccount (long accountNumber, double openBalance, double interestRate, Date accountOpenedOn) {
 		super(accountNumber, openBalance, interestRate, accountOpenedOn);
 	}
-
+	//storing the data we got from reading the file into the savings account 
 	public static SavingsAccount readFromString(String accountData)throws ParseException, NumberFormatException {
     	String [] holding = accountData.split(",");
     	SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");

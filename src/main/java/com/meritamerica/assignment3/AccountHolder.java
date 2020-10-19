@@ -316,6 +316,7 @@ public class AccountHolder implements Comparable<AccountHolder>  {
 		return (getCheckingBalance() + getSavingsBalance() + getCDBalance());
 	}
 
+// writing the data we have stored in account holder to a string and sending it to txt file
 	public String writeToString() {
     	StringBuilder accountHolderData = new StringBuilder();
     	accountHolderData.append(firstName).append(",");
@@ -324,7 +325,8 @@ public class AccountHolder implements Comparable<AccountHolder>  {
     	accountHolderData.append(ssn);
     	return accountHolderData.toString();
     }
-
+	
+	//storing the data we got from reading the file into the  account holder
 	public static AccountHolder readFromString(String accountHolderData) {
 	    String[] holding = accountHolderData.split(",");
 	    String firstName = holding[0];

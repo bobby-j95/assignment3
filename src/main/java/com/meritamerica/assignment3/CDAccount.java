@@ -8,7 +8,7 @@ public class CDAccount extends BankAccount{
 	private CDOffering offering = null;
 	private Date startDate;
 	private double balance;
-	private int term =0;
+	private int term;
 	
 	//*created by behulum w
 	
@@ -44,13 +44,27 @@ public class CDAccount extends BankAccount{
 	public long getAccountNumber() {
 		return super.accountNumber;
 	}
-	
+	// not able to withdraw money from CD Account till term is up
 	public boolean withdraw(double amount) {
+		Date date = new Date();  
+		int years =   startDate.getYear() -date.getYear();
+		if(years> term)
+		{
+	        return true;
+		}
+		
         return false;
     }
-    
+    // not able to deposit more money into CD Account till term is up
     public boolean deposit(double amount) {
-    	return false;
+		Date date = new Date();  
+		int years =   startDate.getYear() -date.getYear();
+		if(years> term)
+		{
+	        return true;
+		}
+		
+        return false;
     }
 	
 	public double futureValue() {
@@ -58,7 +72,8 @@ public class CDAccount extends BankAccount{
 		
 		
 	}
-
+	
+	//storing the data we got from reading the file into the cd account 
 	public static CDAccount readFromString(String accountData)throws ParseException, NumberFormatException {
     	String [] holding = accountData.split(",");
     	SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
@@ -70,7 +85,8 @@ public class CDAccount extends BankAccount{
     	CDAccount newCDAccount = new CDAccount(accountNumber,balance,interestRate,accountOpenedOn,term);
     	return newCDAccount;
     }
-    
+	
+	// writing the data we have stored in cd account to a string and sending it to txt file   
     public String writeToString() {
     	StringBuilder override = new StringBuilder();
     	override.append(writeToString()).append(",");

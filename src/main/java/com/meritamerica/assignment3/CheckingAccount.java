@@ -17,7 +17,7 @@ public class CheckingAccount extends BankAccount {
 	public CheckingAccount (long accountNumber, double openBalance, double interestRate, Date accountOpenedOn) {
 		super(accountNumber, openBalance, interestRate, accountOpenedOn);
 	}
-
+	//storing the data we got from reading the file into the checking account 
 	public static CheckingAccount readFromString(String accountData)throws ParseException {
     	
 		String [] holding = accountData.split(",");

@@ -85,7 +85,7 @@ public class BankAccount {
 	public double futureValue(int years) {
 		return (balance * (Math.pow((1 + interestRate), years)));
 	}
-
+	// writing the data we have stored in cd checking or savings account to a string and sending it to txt file
 	public String writeToString() {
 		StringBuilder accountData = new StringBuilder();
 		accountData.append(accountNumber).append(",");
@@ -94,6 +94,8 @@ public class BankAccount {
 		accountData.append(interestRate);
 		return accountData.toString();
 	}
+	
+	//storing the data we got from reading the file into the cd checkings or savings account
 	public static BankAccount readFromString(String accountData)throws ParseException, NumberFormatException {
 	    try {
 	    	String [] holding = accountData.split(",");
