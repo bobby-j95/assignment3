@@ -18,7 +18,7 @@ public class CheckingAccount extends BankAccount {
 		super(accountNumber, openBalance, interestRate, accountOpenedOn);
 	}
 	//storing the data we got from reading the file into the checking account 
-	public static CheckingAccount readFromString(String accountData)throws ParseException {
+	public static CheckingAccount readFromString(String accountData)throws java.lang.NumberFormatException, ParseException {
     	
 		String [] holding = accountData.split(",");
 		SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");

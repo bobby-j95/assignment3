@@ -203,7 +203,9 @@ public class MeritBank {
 					bufferedWriter.newLine();
 				}
 			}
+			bufferedWriter.close();
 			writer.close();
+			
 			return true;
 		} catch (Exception e) {
 			return false;
